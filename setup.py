@@ -87,6 +87,16 @@ EXTENSIONS = [Extension('ConfigSpace.hyperparameters',
 for e in EXTENSIONS:
     e.cython_directives = COMPILER_DIRECTIVES
 
+extras_reqs = {
+    "test": [
+        "pytest>=4.6",
+        "mypy",
+        "pre-commit",
+        "pytest-cov",
+    ],
+    "docs": ["sphinx", "sphinx-gallery", "sphinx_bootstrap_theme", "numpydoc"],
+}
+
 
 setup(
     name=MODULE_NAME,
@@ -104,6 +114,7 @@ setup(
     test_suite=TEST_SUITE,
     setup_requires=SETUP_REQS,
     install_requires=INSTALL_REQS,
+    extras_require=extras_reqs,
     keywords=KEYWORDS,
     packages=find_packages(),
     python_requires=MIN_PYTHON_VERSION,
