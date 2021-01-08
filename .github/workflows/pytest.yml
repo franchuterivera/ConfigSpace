@@ -49,7 +49,7 @@ jobs:
         sudo apt-get update
         # We need to install for the dependencies, like pytest
         python setup.py sdist
-        last_dist=$(ls -t dist/ConfgiSpace-*.tar.gz | head -n 1)
+        last_dist=$(ls -t dist/ConfigSpace-*.tar.gz | head -n 1)
         pip install $last_dist[test]
     - name: Store repository status
       id: status-before
