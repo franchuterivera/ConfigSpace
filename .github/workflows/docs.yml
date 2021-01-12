@@ -20,7 +20,7 @@ jobs:
     - name: Pull latest gh-pages
       run: |
         cd ..
-        git clone git@github.com:automl/ConfigSpace.git --branch gh-pages --single-branch gh-pages
+        git clone https://github.com/automl/ConfigSpace.git --branch gh-pages --single-branch gh-pages
     - name: Copy new docs into gh-pages
       run: |
         branch_name=${GITHUB_REF##*/}
